@@ -1,0 +1,26 @@
+{
+  "name": "bloktech",
+  "version": "1.0.0",
+  "description": "opdracht voor blok tech",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArisRosbach/blokTech.git"
+  },
+  "keywords": [
+    "asiel",
+    "dieren",
+    "filteren",
+    "match",
+    "matching"
+  ],
+  "author": "Aris Rosbach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArisRosbach/blokTech/issues"
+  },
+  "homepage": "https://github.com/ArisRosbach/blokTech#readme"
+}
