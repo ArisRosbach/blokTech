@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/ArisRosbach/blokTech/issues"
   },
-  "homepage": "https://github.com/ArisRosbach/blokTech#readme"
+  "homepage": "https://github.com/ArisRosbach/blokTech#readme",
+  "dependencies": {
+    "camelcase": "^6.3.0"
+  }
 }
