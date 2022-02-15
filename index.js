@@ -1,8 +1,17 @@
-console.log("Hallo");
-
-
 const camelCase = require('camelcase');
+const express = require('express')
+const app = express()
+const port = 3000
+
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
 
 console.log(camelCase('foo-bar'));
-console.log(camelCase('aris_rosbach'));
+console.log(camelCase('ik-ben-aris_rosbach'));
