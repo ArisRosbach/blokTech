@@ -26,6 +26,7 @@
   "homepage": "https://github.com/ArisRosbach/blokTech#readme",
   "dependencies": {
     "camelcase": "^6.3.0",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "hbs": "^4.2.0"
   }
 }
