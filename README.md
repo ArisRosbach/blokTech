@@ -1,11 +1,15 @@
 # Matching-application
 Welkom bij mijn blokTech repository. 
 
-## Debrief
-Binnen dit blok is het de bedoeling om de eerste 4 weken individueel een feature uit te werken voor een matching applicatie. Hierbij zullen we een concept bedenken en daaruit een feature kiezen. Vervolgens ga je deze uitwerken binnen de vakken Project Tech, Backend en Frontend.<br>
-De laatste weken van dit blok wordt je in groepjes gezet om een gehele site uit te werken voor een matching applicatie. Dus dat je niet meer 1 feature hebt maar een geheel product.<br>
+## Over dit project
+Dit project bevat een feature voor een matching applicatie.
+Hierbij zal gebruik worden gemaakt van 
+-	HTML 
+-	CSS
+-	JavaScript
+-	Node.js
 
-Binnen dit blok zullen we aan de slag gaan met de terminal en github. We zullen de feature uiteindelijk maken met HTML, CSS, JavaScript en Node.js.
+Op dit moment is het project nog niet afgerond en compleet, daarom zullen er dagelijks of wekelijks nog aanpassing worden gedaan en is de feature nog niet compleet.
 
 
 ## Concept en Feature
@@ -19,3 +23,8 @@ De gehele documentatie over hoe ik op mijn concept ben gekomen en hoe ik mijn fe
 
 ## Lincense
 ArisRosbach/blokTech is licensed under the [GNU General Public License v3.0](https://github.com/ArisRosbach/blokTech/blob/main/LICENSE)
+
+## Contact
+Naam -  Aris Rosbach
+Email - @aris.rosbach@hva.nl
+Project - https://github.com/ArisRosbach/blokTech
