@@ -2,8 +2,8 @@
 Welkom bij mijn blokTech repository. 
 
 ## Over dit project
-Dit project bevat een feature voor een matching applicatie.
-Hierbij zal gebruik worden gemaakt van 
+Dit project bevat een feature voor een matching applicatie. <br>
+Hierbij zal gebruik worden gemaakt van: 
 -	HTML 
 -	CSS
 -	JavaScript
@@ -25,6 +25,6 @@ De gehele documentatie over hoe ik op mijn concept ben gekomen en hoe ik mijn fe
 ArisRosbach/blokTech is licensed under the [GNU General Public License v3.0](https://github.com/ArisRosbach/blokTech/blob/main/LICENSE)
 
 ## Contact
-Naam -  Aris Rosbach
-Email - @aris.rosbach@hva.nl
+Naam -  Aris Rosbach <br>
+Email - @aris.rosbach@hva.nl <br>
 Project - https://github.com/ArisRosbach/blokTech
