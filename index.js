@@ -17,7 +17,7 @@ const PORT = 8000
 const exphbs = require("express-handlebars");
 app.engine(
   "hbs",
-    exphbs.engine({
+  exphbs.engine({
     defaultLayout: "main",
     extname: ".hbs",
   })
@@ -58,5 +58,6 @@ function notfound(req, res) {
 app.listen(PORT, function () {
   console.log('listening to port: ', PORT)
 })
+
 
 
