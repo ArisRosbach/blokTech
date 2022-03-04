@@ -11,7 +11,7 @@ html {
 /* ********************************************************************************************* */
 /* ********************************************************************************************* */
 body {
-    background-color: azure;
+    background-color: white;
 }
 
 header {
@@ -44,7 +44,7 @@ header nav {
     justify-content: center;
 }
 
-header nav ul{
+header nav ul {
     display: flex;
     align-items: center;
     flex-grow: 1;
@@ -68,6 +68,13 @@ header nav img {
     width: 2.5em;
 }
 
+header hr {
+    border-top: 0.2em solid #bbb;
+    border-radius: 1em;
+    width: 70%;
+    margin: auto;
+}
+
 
 /* ********************************************************************************************* */
 /* ********************************************************************************************* */
@@ -77,30 +84,41 @@ header nav img {
 #matches section:first-of-type {
     display: flex;
     flex-wrap: wrap;
-    margin: 1em;
-    justify-content: space-between;
+    justify-content: center;
+    margin: 2em;
 }
 
 #matches section:nth-of-type(2) {
     display: flex;
     flex-wrap: wrap;
+    margin: 1em;
+    justify-content: flex-start;
+}
+
+#matches section:nth-of-type(3) {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
-#matches section:nth-of-type(2) div {
+#matches section:nth-of-type(3) a {
+    text-decoration: none;
     background-color: beige;
     width: 15em;
+    height: 20em;
+    border-radius: 1em;
+    border: solid 0.1em black;
+    position: relative;
+    margin: 1em 0em;
 }
 
+#matches section:nth-of-type(3) a div {
+    color: black;
+    position: absolute;
+    bottom: 1.5em;
+    padding-left: 1em;
+}
 
-/* ********************************************************************************************* */
-/* ********************************************************************************************* */
-/* Filters */
-/* ********************************************************************************************* */
-/* ********************************************************************************************* */
-#filters section:nth-of-type(2) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 2em;
+#matches section:nth-of-type(3) a div h3 {
+    padding: 0.5em 0em;
 }
