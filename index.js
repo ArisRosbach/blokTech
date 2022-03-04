@@ -1,18 +1,12 @@
-// ----------------------------------- camelcase toepassen
-
 const camelCase = require('camelcase');
-
-console.log(camelCase('foo-bar'));
 console.log(camelCase('ik-ben-aris_rosbach'));
-
-
 
 
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
+const multer = require('multer')
 const PORT = 8000
-
-// ----------------------------------- render pages
 
 const exphbs = require("express-handlebars");
 app.engine(
@@ -25,14 +19,14 @@ app.engine(
 
 app.set("view engine", "hbs");
 
+
+app.use('/static', express.static('static'))
+
+
 app.get("/", (req, res) => {
   res.render("matches");
 });
 
-
-// ----------------------------------- routes maken
-
-app.use('/static', express.static('static'))
 
 app.get('/', onhome)
 app.get('/about', onabout)
