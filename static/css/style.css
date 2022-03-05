@@ -86,19 +86,45 @@ header hr {
 /* ********************************************************************************************* */
 /* ********************************************************************************************* */
 #matches section:first-of-type {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
     margin: 2em;
 }
 
-#matches section:nth-of-type(1) button {
+#matches section:first-of-type form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#matches section:first-of-type fieldset {
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#matches section:first-of-type button {
     background-color: #9ACD32;
     border: none;
     color: black;
     padding: 1em 1.5em;
     font-size: 1em;
     cursor: pointer;
+    margin: 1em 100%;
+}
+
+#matches section:first-of-type input {
+    margin: 0.2em 0.5em 0em 0em;
+}
+
+#matches section:first-of-type label {
+    padding: 0em 2em 0em 0em;
+}
+
+#matches section:first-of-type label:last-child {
+    padding: 0em;
 }
 
 #matches section:nth-of-type(2) {
