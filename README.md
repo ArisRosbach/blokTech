@@ -14,7 +14,7 @@ Op dit moment is het project nog niet afgerond en compleet, daarom zullen er dag
 
 ## Concept en Feature
 Het concept wat ik heb bedacht is dieren uit het asiel koppelen aan toekomstige baasjes. 
-Hierbij wil ik me focussen op het kunnen filteren van matches. Dus wanneer je als gebruiker een account aan maakt geef je aan waar je naar op zoek bent. In dit voorbeeld nemen we even aan dat dit een hond. Bij je potentiële matches krijg je dan alleen maar honden te zien.
+Hierbij wil ik me focussen op het kunnen filteren van matches. Dus wanneer je als gebruiker een account aan maakt geef je aan waar je naar op zoek bent. In dit voorbeeld nemen we even aan dat dit een hond. Bij je potentiële matches krijg je dan alleen maar honden te zien. 
 
 
 ## Documentatie
