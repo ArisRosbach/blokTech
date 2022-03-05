@@ -1,65 +1,104 @@
 <main id="matches">
 
+    {{!-- Section 1 --}}
     <section>
-        <form action="/" method="POST">
-            <input type="checkbox" id="diersoort1" name="diersoort1" value="hond">
-            <label for="vehicle1"> Ik zoek een hond</label><br>
-            <input type="checkbox" id="diersoort2" name="diersoort2" value="Kat">
-            <label for="vehicle2"> Ik zoek een kat</label><br>
-            <input type="checkbox" id="diersoort3" name="diersoort3" value="Konijn">
-            <label for="vehicle3"> Ik zoek een konijn</label>
-        </form>
+        <fieldset>
+            <form action="/" method="POST">
+                <input type="checkbox" id="hond" name="diersoort1" value="hond">
+                <label for="diersoort1"> Ik zoek een hond</label><br>
+                <input type="checkbox" id="kat" name="diersoort2" value="Kat">
+                <label for="diersoort2"> Ik zoek een kat</label><br>
+                <input type="checkbox" id="knaagdier" name="diersoort3" value="Konijn">
+                <label for="diersoort3"> Ik zoek een knaagdier</label>
+                <button type="submit">Opslaan</button>
+            </form>
+        </fieldset>
     </section>
 
+    {{!-- Section 2 --}}
     <section>
         <h2>Mijn matches</h2>
     </section>
 
+    {{!-- Section 3 --}}
     <section>
         <a href="#">
-            <img src="static/images/Hond.jpg" alt="foto van een dier">
+            <img src="static/images/hondBulldog.png" alt="foto van een dier">
             <div>
-                <h3>Buldog</h3>
+                <h3>Bowser</h3>
+                <h4>Bulldog</h4>
                 <p>Dierentehuis Hoorn</p>
             </div>
         </a>
 
         <a href="#">
-            <img src="static/images/Hond.jpg" alt="foto van een dier">
+            <img src="static/images/hondLabrador.png" alt="foto van een dier">
             <div>
-                <h3>Kitten</h3>
+                <h3>Sammy</h3>
+                <h4>Labrador</h4>
                 <p>Asiel Den Helder</p>
             </div>
         </a>
 
         <a href="#">
-            <img src="static/images/Hond.jpg" alt="foto van een dier">
+            <img src="static/images/konijnBruin.png" alt="foto van een dier">
             <div>
-                <h3>Hamster</h3>
+                <h3>Snuf</h3>
+                <h4>Konijn</h4>
                 <p>Dierentehuis Hoorn</p>
             </div>
         </a>
 
         <a href="#">
-            <img src="images/Hond.jpg" alt="foto van een dier">
+            <img src="static/images/katLapjeskat.png" alt="foto van een dier">
             <div>
-                <h3>Lapjeskat</h3>
+                <h3>Vlek</h3>
+                <h4>Lapjeskat</h4>
                 <p>Dierentehuis Den Helder</p>
             </div>
         </a>
 
         <a href="#">
-            <img src="images/Hond.jpg" alt="foto van een dier">
+            <img src="static/images/katKitten.png" alt="foto van een dier">
             <div>
-                <h3>Kitten</h3>
+                <h3>Pip</h3>
+                <h4>Kitten</h4>
                 <p>Dierenpension 't Schipperke</p>
             </div>
         </a>
 
         <a href="#">
-            <img src="images/Hond.jpg" alt="foto van een dier">
+            <img src="static/images/hondPoedel.png" alt="foto van een dier">
             <div>
-                <h3>Konijn</h3>
+                <h3>Beau</h3>
+                <h4>Poedel</h4>
+                <p>Dierentehuis Hoorn</p>
+            </div>
+        </a>
+
+        <a href="#">
+            <img src="static/images/hondOnbekend.png" alt="foto van een dier">
+            <div>
+                <h3>Jordi</h3>
+                <h4>Onbekend</h4>
+                <p>Dierentehuis Alkmaar</p>
+            </div>
+        </a>
+
+        <a href="#">
+            <img src="static/images/hondHerder.png" alt="foto van een dier">
+            <div>
+                <h3>Monti</h3>
+                <h4>Herder</h4>
+                <p>Dierenpension 't Schipperke</p>
+            </div>
+        </a>
+
+        <a href="#">
+            <img src="static/images/katGrijs.png" alt="foto van een dier">
+            <div>
+                <h3>Kay</h3>
+                <h4>kat</h4>
                 <p>Dierentehuis Hoorn</p>
             </div>
         </a>
