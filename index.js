@@ -9,6 +9,17 @@ const bodyParser = require('body-parser')
 const multer = require('multer')
 const PORT = 8000
 
+
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@blok-tech-aris.lqajs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
 // array met alle dieren uit het asiel
 const dieren = [{
     naam: "Bowser",
