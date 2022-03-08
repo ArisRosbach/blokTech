@@ -10,88 +10,18 @@ const multer = require('multer')
 const PORT = 8000
 
 
-const {test}  = require('./utils/db')
+const {utilsDB}  = require('./utils/db')
 
+// laad variableen uit mijn .env
 require('dotenv').config();
 
+// om de database te koppelen
 const { MongoClient } = require('mongodb');
-
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@blok-tech-aris.lqajs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
- 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-
-test(client).then(data => { console.log(data)})
-
-
-
-
-// array met alle dieren uit het asiel
-// const dieren = [{
-//   //   naam: "Bowser",
-//   //   imgSrc: "static/images/hondBulldog.png",
-//   //   ras: "Bulldog",
-//   //   locatie: "Dierentehuis Hoorn",
-//   //   diersoort: "hond",
-//   // },
-  
-//     naam: "Sammy",
-//     imgSrc: "static/images/hondLabrador.png",
-//     ras: "Labrador",
-//     locatie: "Asiel Den Helder",
-//     diersoort: "hond",
-//   },
-//   {
-//     naam: "Ming",
-//     imgSrc: "static/images/konijnBruin.png",
-//     ras: "Konijn",
-//     locatie: "Dierentehuis Hoorn",
-//     diersoort: "knaagdier",
-//   },
-//   {
-//     naam: "Muffin",
-//     imgSrc: "static/images/katLapjeskat.png",
-//     ras: "Lapjeskat",
-//     locatie: "Dierentehuis Den Helder",
-//     diersoort: "kat",
-//   },
-//   {
-//     naam: "Pip",
-//     imgSrc: "static/images/katKitten.png",
-//     ras: "Kitten",
-//     locatie: "Dierenpension 't Schipperke",
-//     diersoort: "kat",
-//   },
-//   {
-//     naam: "Beau",
-//     imgSrc: "static/images/hondPoedel.png",
-//     ras: "Poedel",
-//     locatie: "Dierentehuis Hoorn",
-//     diersoort: "hond",
-//   },
-//   {
-//     naam: "Jordi",
-//     imgSrc: "static/images/hondOnbekend.png",
-//     ras: "Onbekend",
-//     locatie: "Dierentehuis Alkmaar",
-//     diersoort: "hond",
-//   },
-//   {
-//     naam: "Monti",
-//     imgSrc: "static/images/hondHerder.png",
-//     ras: "Herder",
-//     locatie: "Dierenpension 't Schipperke",
-//     diersoort: "hond",
-//   },
-//   {
-//     naam: "Kay",
-//     imgSrc: "static/images/katGrijs.png",
-//     ras: "Kat",
-//     locatie: "Dierentehuis Hoorn",
-//     diersoort: "kat",
-//   },
-// ];
-
+// alle dieren die in array staan in console weergeven
+utilsDB(client).then(data => { console.log(data)})
 
 // Gebruiken van hbs voor extensions
 app.engine("hbs", exphbs.engine({
@@ -111,13 +41,12 @@ app.use(express.urlencoded({
   extended: true
 }));
 
-
 // async geeft aan dat dit een funcite is waarin dingen langer duren, zoals data uit een database halen
 // res.render() wordt gebruikt om een view te renderen en verstuurd de gerenderde HTML naar de client. 
 app.get("/", async(req, res) => {
 
   // data uit de database wat in een array is gestopt wordt nu in de constante dieren gezet.
-  const dieren = await test(client); 
+  const dieren = await utilsDB(client); 
 
   // ophalen dieren database
   res.render("matches", {
@@ -128,7 +57,7 @@ app.get("/", async(req, res) => {
 
 app.post("/formulier", async(req, res) => {
 
-  const dieren = await test(client); 
+  const dieren = await utilsDB(client); 
 
   console.log(req.body);
   // filter animals

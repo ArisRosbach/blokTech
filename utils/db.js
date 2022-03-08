@@ -1,4 +1,4 @@
-exports.test = async function (client) {
+exports.utilsDB = async function (client) {
     try {
         await client.connect()
 
@@ -13,7 +13,7 @@ exports.test = async function (client) {
         // // Hier zet ik data in die ik in de database wil hebben.
         // const doc = {
         //     naam: "Coco",
-        //     imgSrc: "static/images/katGrijs.png",
+        //     imgSrc: "static/images/blauweParkiet.png",
         //     ras: "Parkiet",
         //     locatie: "Dierentehuis Hoorn",
         //     diersoort: "overig",
