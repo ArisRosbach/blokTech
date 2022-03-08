@@ -17,88 +17,80 @@ require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@blok-tech-aris.lqajs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-
-console.log(uri)
-
+ 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-console.log(test)
-test(client)
 
+test(client).then(data => { console.log(data)})
 
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
 
 
 
 // array met alle dieren uit het asiel
-const dieren = [{
-    naam: "Bowser",
-    imgSrc: "static/images/hondBulldog.png",
-    ras: "Bulldog",
-    locatie: "Dierentehuis Hoorn",
-    diersoort: "hond",
-  },
-  {
-    naam: "Sammy",
-    imgSrc: "static/images/hondLabrador.png",
-    ras: "Labrador",
-    locatie: "Asiel Den Helder",
-    diersoort: "hond",
-  },
-  {
-    naam: "Ming",
-    imgSrc: "static/images/konijnBruin.png",
-    ras: "Konijn",
-    locatie: "Dierentehuis Hoorn",
-    diersoort: "knaagdier",
-  },
-  {
-    naam: "Muffin",
-    imgSrc: "static/images/katLapjeskat.png",
-    ras: "Lapjeskat",
-    locatie: "Dierentehuis Den Helder",
-    diersoort: "kat",
-  },
-  {
-    naam: "Pip",
-    imgSrc: "static/images/katKitten.png",
-    ras: "Kitten",
-    locatie: "Dierenpension 't Schipperke",
-    diersoort: "kat",
-  },
-  {
-    naam: "Beau",
-    imgSrc: "static/images/hondPoedel.png",
-    ras: "Poedel",
-    locatie: "Dierentehuis Hoorn",
-    diersoort: "hond",
-  },
-  {
-    naam: "Jordi",
-    imgSrc: "static/images/hondOnbekend.png",
-    ras: "Onbekend",
-    locatie: "Dierentehuis Alkmaar",
-    diersoort: "hond",
-  },
-  {
-    naam: "Monti",
-    imgSrc: "static/images/hondHerder.png",
-    ras: "Herder",
-    locatie: "Dierenpension 't Schipperke",
-    diersoort: "hond",
-  },
-  {
-    naam: "Kay",
-    imgSrc: "static/images/katGrijs.png",
-    ras: "Kat",
-    locatie: "Dierentehuis Hoorn",
-    diersoort: "kat",
-  },
-];
+// const dieren = [{
+//   //   naam: "Bowser",
+//   //   imgSrc: "static/images/hondBulldog.png",
+//   //   ras: "Bulldog",
+//   //   locatie: "Dierentehuis Hoorn",
+//   //   diersoort: "hond",
+//   // },
+  
+//     naam: "Sammy",
+//     imgSrc: "static/images/hondLabrador.png",
+//     ras: "Labrador",
+//     locatie: "Asiel Den Helder",
+//     diersoort: "hond",
+//   },
+//   {
+//     naam: "Ming",
+//     imgSrc: "static/images/konijnBruin.png",
+//     ras: "Konijn",
+//     locatie: "Dierentehuis Hoorn",
+//     diersoort: "knaagdier",
+//   },
+//   {
+//     naam: "Muffin",
+//     imgSrc: "static/images/katLapjeskat.png",
+//     ras: "Lapjeskat",
+//     locatie: "Dierentehuis Den Helder",
+//     diersoort: "kat",
+//   },
+//   {
+//     naam: "Pip",
+//     imgSrc: "static/images/katKitten.png",
+//     ras: "Kitten",
+//     locatie: "Dierenpension 't Schipperke",
+//     diersoort: "kat",
+//   },
+//   {
+//     naam: "Beau",
+//     imgSrc: "static/images/hondPoedel.png",
+//     ras: "Poedel",
+//     locatie: "Dierentehuis Hoorn",
+//     diersoort: "hond",
+//   },
+//   {
+//     naam: "Jordi",
+//     imgSrc: "static/images/hondOnbekend.png",
+//     ras: "Onbekend",
+//     locatie: "Dierentehuis Alkmaar",
+//     diersoort: "hond",
+//   },
+//   {
+//     naam: "Monti",
+//     imgSrc: "static/images/hondHerder.png",
+//     ras: "Herder",
+//     locatie: "Dierenpension 't Schipperke",
+//     diersoort: "hond",
+//   },
+//   {
+//     naam: "Kay",
+//     imgSrc: "static/images/katGrijs.png",
+//     ras: "Kat",
+//     locatie: "Dierentehuis Hoorn",
+//     diersoort: "kat",
+//   },
+// ];
 
 
 // Gebruiken van hbs voor extensions
@@ -119,14 +111,25 @@ app.use(express.urlencoded({
   extended: true
 }));
 
+
+// async geeft aan dat dit een funcite is waarin dingen langer duren, zoals data uit een database halen
 // res.render() wordt gebruikt om een view te renderen en verstuurd de gerenderde HTML naar de client. 
-app.get("/", (req, res) => {
+app.get("/", async(req, res) => {
+
+  // data uit de database wat in een array is gestopt wordt nu in de constante dieren gezet.
+  const dieren = await test(client); 
+
+  // ophalen dieren database
   res.render("matches", {
+    // dieren: dieren
     dieren: dieren
   });
 });
 
-app.post("/formulier", (req, res) => {
+app.post("/formulier", async(req, res) => {
+
+  const dieren = await test(client); 
+
   console.log(req.body);
   // filter animals
   const filteredDieren = dieren.filter((dieren) => {
@@ -140,15 +143,11 @@ app.post("/formulier", (req, res) => {
 });
 
 
-
-app.get('/', onhome)
+// Hiermee worden er nieuwe routes gemaak
 app.get('/about', onabout)
 app.get('/login', onlogin)
 app.get('*', notfound)
 
-function onhome(req, res) {
-  res.send('<h1>Dit is de homepagina!</h1>')
-}
 
 function onabout(req, res) {
   res.send('<h1>Hier vind je alles about me!</h1>')
@@ -162,6 +161,8 @@ function notfound(req, res) {
   res.send('<h1>404 - Not Found!</h1>')
 }
 
+
+// Geeft aan dat de app draait op de poort 8000
 app.listen(PORT, function () {
   console.log('listening to port: ', PORT)
 })
