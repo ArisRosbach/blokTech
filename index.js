@@ -37,7 +37,7 @@ app.use('/static', express.static('static'));
 
 // middleware om omtegaan met incoming data in de body van een request. In dit geval POST
 app.use(express.json());
-app.use(express.urlencoded({
+app.use(bodyParser.urlencoded({
   extended: true
 }));
 
@@ -50,7 +50,6 @@ app.get("/", async(req, res) => {
 
   // ophalen dieren database
   res.render("matches", {
-    // dieren: dieren
     dieren: dieren
   });
 });
@@ -71,6 +70,12 @@ app.post("/formulier", async(req, res) => {
   });
 });
 
+app.delete("/delete", async(req, res) => {
+
+  const dieren = await utilsDB(client); 
+
+  console.log(req.body);
+});
 
 // Hiermee worden er nieuwe routes gemaak
 app.get('/about', onabout)
