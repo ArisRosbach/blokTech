@@ -7,7 +7,7 @@ const app = express()
 const exphbs = require("express-handlebars");
 const bodyParser = require('body-parser')
 const multer = require('multer')
-const PORT = 8000
+const PORT = 8080
 
 
 const {utilsDB}  = require('./utils/db')
@@ -48,7 +48,7 @@ app.get("/", async(req, res) => {
   // data uit de database wat in een array is gestopt wordt nu in de constante dieren gezet.
   const dieren = await utilsDB(client); 
 
-  // ophalen dieren database
+  // ophalen dieren database en deze weergeven op de localhost:8000
   res.render("matches", {
     dieren: dieren
   });
@@ -59,22 +59,30 @@ app.post("/formulier", async(req, res) => {
   const dieren = await utilsDB(client); 
 
   console.log(req.body);
+  
   // filter animals
   const filteredDieren = dieren.filter((dieren) => {
     // stop het item alleen in de array wanneer onderstaande regel 'true' is
     return dieren.diersoort == req.body.diersoort;
   });
-  //render same page with filtered animals
+  //render van localhost:8000/formulier met de gefilterde dieren
   res.render("matches", {
     dieren: filteredDieren
   });
 });
 
-app.delete("/delete", async(req, res) => {
+app.post("/delete", async (req, res) => {
 
-  const dieren = await utilsDB(client); 
+  await client.connect()
 
-  console.log(req.body);
+  console.log(req.body)
+
+  client.db('userdb').collection('users').deleteOne({ naam: req.body.naam }).then(hond => {
+    console.log(hond);
+  })
+
+  res.redirect('/')
+
 });
 
 // Hiermee worden er nieuwe routes gemaak

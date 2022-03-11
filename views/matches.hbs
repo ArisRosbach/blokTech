@@ -37,8 +37,8 @@
                 <h3>{{this.naam}}</h3>
                 <h4>{{this.ras}}</h4>
                 <p>{{this.locatie}}</p>
-                <form action="/delete" method="DELETE">
-                    <input name="asieldier" type="hidden" value="{{this._id}}" />
+                <form action="/delete" method="post">
+                    <input name="asieldier" type="hidden" id="dierId" value="{{this.naam}}" />
                     <button type="submit">Delete</button>
                 </form>
             </div>

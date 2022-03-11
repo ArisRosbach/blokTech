@@ -12,10 +12,10 @@ exports.utilsDB = async function (client) {
 
         // // Hier zet ik data in die ik in de database wil hebben.
         // const doc = {
-        //     naam: "Banjer",
+        //     naam: "Yo",
         //     imgSrc: "static/images/hamsterWit.png",
         //     ras: "hamster",
-        //     locatie: "Dierentehuis Hoorn",
+        //     locatie: "Dierentehuis Alkmaar",
         //     diersoort: "knaagdier",
         // }
 
