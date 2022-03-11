@@ -47,9 +47,16 @@ node -v #
 npm -v # 
 ```
 
+## Database
+Binnen dit project is er gebruik van een MongoDB database. <br>
+Wil je hier meer over begrijpen en lezen wat mijn database structuur is? Dan verwijs ik je graag door naar de pagina [Database Structure](https://github.com/ArisRosbach/blokTech/wiki/Database-Structure) binnen mijn wiki. <br>
+Hier vind je een korte toelichting over een database en heb ik de structuur in een afbeelding weergegeven. 
+
 
 ## Documentatie
-De gehele documentatie over hoe ik op mijn concept ben gekomen en hoe ik mijn feature heb uitgwerkt kun je terug vinden in de [Wiki](https://github.com/ArisRosbach/blokTech/wiki) van deze repository. 
+Dit project is tot stand gekomen dankzij veel ideeën maar vooral onderzoek. <br>
+Mijn gehele documentatie hiervan kun je vinden in de [wiki](https://github.com/ArisRosbach/blokTech/wiki) van deze repository. <br>
+Hier lees je over hoe ik tot mijn concept en feature ben gekomen. Daarnaast heb ik ook veel onderzoek gedaan naar de onderwerpen die kwamen kijken bij het maken van dit project.
 
 
 ## Lincense
