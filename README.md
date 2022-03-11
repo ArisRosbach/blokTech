@@ -13,39 +13,39 @@ Daarnaast kun je in je eigen sessie een match verwijderen als je deze niet inter
 
 
 ## Installatie 
+### Aan de slag
 Wil je aan de slag met mijn project? Voer dan de volgende stappen uit: <br>
 1.	Open een terminal en navigeer naar een map waar jij mijn repository in wilt opslaan.
 2.	Clone deze repository:
 ```
 Git clone https://github.com/ArisRosbach/blokTech
 ```
-3.	Wanneer dit is gelukt heb je de repository op je eigen computer staan. Navigeer binnen deze repository in de terminal. Om dit project vervolgens te laten werken voer je het volgende commando uit:
+3.  Wanneer dit is gelukt heb je de repository op je eigen computer staan. Navigeer binnen deze repository in de terminal. Je wilt nu alle packages installeren die je nodig hebt voor deze feature. Om dit project vervolgens te laten werken voer je het volgende commando uit: <br>
 ```
 Npm install
 ```
-Hiermee installeer je alle packages die je nodig hebt voor deze feature.
-4.	Als je het project wilt gebruiken tik dan het volgende:
+4.	Als je het project wilt gebruiken tik dan het volgende in je terminal:
 ```
 Nodemon index.js
 ```
-Ga naar een browser ga naar: localhost:8000 <br>
-Als alles goed is verlopen zie je de matches van de asieldieren en kun je filteren. <br> <br>
+Ga naar een browser en navigeer naar: localhost:8000 <br>
+Als alles goed is verlopen zie je de matches van de asieldieren en kun je filteren. <br>
 
+### node installeren
 Heb je bij stap 3 problemen gehad dan kan dat zijn omdat je geen node hebt geïnstalleerd. 
-Open je terminal en installeer nvm met het volgende commando;
+1.  Open je terminal en installeer nvm met het volgende commando;
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 ```
-Sluit je terminal en start deze vervolgens opnieuw op. Tik het volgende in je terminal:
+2.  Sluit je terminal en start deze vervolgens opnieuw op. Tik het volgende in je terminal:
 ```
 nvm install stable
 ```
-Nu heb je Node succesvol geïnstalleerd. Dit kun je met de volgende checken:
+3.  Nu heb je Node succesvol geïnstalleerd. Dit kun je met de volgende checken:
 ```
 node -v # 
 npm -v # 
 ```
-Als het goed is krijg je een versie nummer te zien in je terminal.
 
 
 ## Documentatie
