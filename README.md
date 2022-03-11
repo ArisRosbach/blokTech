@@ -1,5 +1,5 @@
 # Matching-application
-Welkom bij mijn blokTech repository. 
+Welkom bij mijn blokTech repository!
 
 ## Over dit project
 Dit project bevat een feature voor een matching applicatie. <br>
