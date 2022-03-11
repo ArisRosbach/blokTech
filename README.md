@@ -18,20 +18,20 @@ Wil je aan de slag met mijn project? Voer dan de volgende stappen uit: <br>
 1.	Open een terminal en navigeer naar een map waar jij mijn repository in wilt opslaan.
 2.	Clone deze repository:
 ```
-Git clone https://github.com/ArisRosbach/blokTech
+git clone https://github.com/ArisRosbach/blokTech
 ```
 3.  Wanneer dit is gelukt heb je de repository op je eigen computer staan. Navigeer binnen deze repository in de terminal. Je wilt nu alle packages installeren die je nodig hebt voor deze feature. Om dit project vervolgens te laten werken voer je het volgende commando uit: <br>
 ```
-Npm install
+npm install
 ```
 4.	Als je het project wilt gebruiken tik dan het volgende in je terminal:
 ```
-Nodemon index.js
+nodemon index.js
 ```
 Ga naar een browser en navigeer naar: localhost:8000 <br>
 Als alles goed is verlopen zie je de matches van de asieldieren en kun je filteren. <br>
 
-### node installeren
+### Node installeren
 Heb je bij stap 3 problemen gehad dan kan dat zijn omdat je geen node hebt geïnstalleerd. 
 1.  Open je terminal en installeer nvm met het volgende commando;
 ```
