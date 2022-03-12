@@ -7,7 +7,7 @@ const app = express()
 const exphbs = require("express-handlebars");
 const bodyParser = require('body-parser')
 const multer = require('multer')
-const PORT = 8080
+const PORT = 8000
 
 
 const {utilsDB}  = require('./utils/db')
@@ -76,8 +76,9 @@ app.post("/delete", async (req, res) => {
   await client.connect()
 
   console.log(req.body)
+  console.log(req.body.asieldier)
 
-  client.db('userdb').collection('users').deleteOne({ naam: req.body.naam }).then(hond => {
+  client.db('userdb').collection('users').deleteOne({ naam: req.body.asieldier }).then(hond => {
     console.log(hond);
   })
 

@@ -12,11 +12,11 @@ exports.utilsDB = async function (client) {
 
         // // Hier zet ik data in die ik in de database wil hebben.
         // const doc = {
-        //     naam: "Yo",
-        //     imgSrc: "static/images/hamsterWit.png",
-        //     ras: "hamster",
-        //     locatie: "Dierentehuis Alkmaar",
-        //     diersoort: "knaagdier",
+        //     naam: "Bowser",
+        //     imgSrc: "static/images/hondBulldog.png",
+        //     ras: "Bulldog",
+        //     locatie: "Dierentehuis Hoorn",
+        //     diersoort: "hond",
         // }
 
         // // De bovenstaande data word met functie inserOne gestop in database.
