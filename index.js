@@ -8,7 +8,7 @@ const exphbs = require("express-handlebars");
 const bodyParser = require('body-parser')
 const multer = require('multer')
 // const PORT = 8000
-const PORT = server.listen(process.env.PORT || 8000);
+const PORT = process.env.PORT || 8000;
 // app.listen(port_number);
 
 
