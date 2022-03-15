@@ -10,12 +10,12 @@ exports.utilsDB = async function (client) {
         return collection.find().toArray()
 
 
-        // // Hier zet ik data in die ik in de database wil hebben.
+        // Hier zet ik data in die ik in de database wil hebben.
         // const doc = {
-        //     naam: "Bowser",
-        //     imgSrc: "static/images/hondBulldog.png",
-        //     ras: "Bulldog",
-        //     locatie: "Dierentehuis Hoorn",
+        //     naam: "Beau",
+        //     imgSrc: "static/images/hondPoedel.png",
+        //     ras: "Poedel",
+        //     locatie: "Dierentehuis Alkmaar",
         //     diersoort: "hond",
         // }
 

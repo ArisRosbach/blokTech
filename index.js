@@ -7,9 +7,7 @@ const app = express()
 const exphbs = require("express-handlebars");
 const bodyParser = require('body-parser')
 const multer = require('multer')
-// const PORT = 8000
 const PORT = process.env.PORT || 8000;
-// app.listen(port_number);
 
 
 const {utilsDB}  = require('./utils/db')
@@ -80,10 +78,12 @@ app.post("/delete", async (req, res) => {
   console.log(req.body)
   console.log(req.body.asieldier)
 
+  //het dier op naam verwijderen die overeenkomt met de naam die geklikt is
   client.db('userdb').collection('users').deleteOne({ naam: req.body.asieldier }).then(hond => {
     console.log(hond);
   })
 
+  // response is dat de home pagana opnieuw geladen wordt
   res.redirect('/')
 
 });
