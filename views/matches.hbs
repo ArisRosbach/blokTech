@@ -3,12 +3,13 @@
     {{!-- Section 1 --}}
     <section>
         <h3>Kies wat voor een dier je zoekt:</h3>
+
         {{!-- Wanneer er op verzonden wordt gedrukt verstuurt browser naar de server,
         browser wordt naar /formulier geleid --}}
-        <form action="/formulier" method="POST">
+        <form action="/formulier" method="post">
             <fieldset>
                 {{!-- Radiobuttons met diersoorten --}}
-                <input type="radio" id="hond" name="diersoort" value="hond" required/>
+                <input type="radio" id="hond" name="diersoort" value="hond" required />
                 <label for="hond">Ik zoek een hond</label>
                 <input type="radio" id="kat" name="diersoort" value="kat" />
                 <label for="kat">Ik zoek een kat</label>
@@ -30,9 +31,8 @@
     {{!-- Section 3 --}}
     <section>
         <ul>
-            {{!-- <li><button>links</button></li> --}}
             <li>
-                {{!-- Loop met hbs om alle dieren te weergeven --}}
+                {{!-- Loop met hbs om alle dieren te weergeven uit database. --}}
                 {{#each dieren}}
                 <a href="#">
                     <img src={{this.imgSrc}} alt="foto van een dier" />
@@ -48,10 +48,10 @@
                 </a>
                 {{/each}}
             </li>
-            {{!-- <li><Button>rechts</Button></li> --}}
         </ul>
 
     </section>
 
+    {{!-- Script.js wordt gekoppeld aan matches.hbs --}}
     <script src="../static/script/script.js"></script>
 </main>

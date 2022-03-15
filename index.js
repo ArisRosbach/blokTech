@@ -1,3 +1,4 @@
+// Begin bericht in de console weergegeven met camelcase.
 const camelCase = require('camelcase');
 console.log(camelCase('ik-ben-aris_rosbach'));
 
@@ -9,15 +10,15 @@ const bodyParser = require('body-parser')
 const multer = require('multer')
 const PORT = process.env.PORT || 8000;
 
-
+// Hiermee haal ik het db.js bestand op.
 const {
   utilsDB
 } = require('./utils/db')
 
-// laad variableen uit mijn .env
+// Laad variableen uit mijn .env
 require('dotenv').config();
 
-// om de database te koppelen
+// Code om de database te koppelen
 const {
   MongoClient
 } = require('mongodb');
@@ -27,110 +28,85 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true
 });
 
-// alle dieren die in array staan in console weergeven
+// Alle dieren die in array staan in console weergeven.
 utilsDB(client).then(data => {
   console.log(data)
 })
 
-// Gebruiken van hbs voor extensions
+// Gebruiken van hbs voor extensions.
 app.engine("hbs", exphbs.engine({
   defaultLayout: "main",
   extname: ".hbs",
 }));
 
-// middleware to setup hbs view engine
+// Middleware to setup hbs view engine.
 app.set("view engine", "hbs");
 
-// om images en css te serven in directory "static"
+// Code om images en css te serven in directory "static".
 app.use('/static', express.static('static'));
 
-// middleware om omtegaan met incoming data in de body van een request. In dit geval POST
+// Middleware om omtegaan met incoming data in de body van een request. In dit geval POST.
 app.use(express.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-// async geeft aan dat dit een funcite is waarin dingen langer duren, zoals data uit een database halen
-// res.render() wordt gebruikt om een view te renderen en verstuurd de gerenderde HTML naar de client. 
+// async geeft aan dat dit een funcite is waarin dingen langer duren, zoals data uit een database halen.
+// Wanneer applicatie wordt geladen wordt deze functie in werking gezet.
 app.get("/", async (req, res) => {
 
   // data uit de database wat in een array is gestopt wordt nu in de constante dieren gezet.
   const dieren = await utilsDB(client);
 
-  // ophalen dieren database en deze weergeven op de localhost:8000
+  // ophalen dieren database en deze weergeven op de localhost:8000.
   res.render("matches", {
     dieren: dieren
   });
 });
 
+// Wanneer gebruiker een radiobutton heeft aangeklikt wordt deze functie in werking gezet.
 app.post("/formulier", async (req, res) => {
 
+  // Ophalen van data duur wat langer dus laten wachten tot dit gelukt is.
   const dieren = await utilsDB(client);
 
   console.log(req.body);
 
-  // filter animals
+  // Filteren asieldieren
   const filteredDieren = dieren.filter((dieren) => {
-    // stop het item alleen in de array wanneer onderstaande regel 'true' is
+    // Stop het item alleen in de array wanneer onderstaande regel 'true' is.
     return dieren.diersoort == req.body.diersoort;
   });
-  //render van localhost:8000/formulier met de gefilterde dieren
+
+  // Renderen van localhost:8000/formulier met de gefilterde dieren.
   res.render("matches", {
     dieren: filteredDieren
   });
 });
 
+// Wanneer gebruiker op delete klikt wordt deze functie in werking gezet.
+// HTML5 ondersteund geen DELETE dus vandaar post.
 app.post("/delete", async (req, res) => {
 
+  // Wachten tot database is connected.
   await client.connect()
 
   console.log(req.body)
   console.log(req.body.asieldier)
 
-  //het dier op naam verwijderen die overeenkomt met de naam die geklikt is
+  // Het dier op naam verwijderen die overeenkomt met de naam die geklikt is.
   client.db('userdb').collection('users').deleteOne({
     naam: req.body.asieldier
   }).then(hond => {
     console.log(hond);
   })
 
-  // response is dat de home pagana opnieuw geladen wordt
+  // Response is dat de home pagana opnieuw geladen wordt.
   res.redirect('/')
 
 });
 
-
-// // ----------------------------------------------------------- front-end
-// const slider = document.querySelector('#matches section:nth-of-type(3) ul');
-// let isDown = false;
-// let startX;
-// let scrollLeft;
-
-// slider.addEventListener('mousedown', e => {
-//   isDown = true;
-//   slider.classList.add('active');
-//   startX = e.pageX - slider.offsetLeft;
-//   scrollLeft = slider.scrollLeft;
-// });
-// slider.addEventListener('mouseleave', _ => {
-//   isDown = false;
-//   slider.classList.remove('active');
-// });
-// slider.addEventListener('mouseup', _ => {
-//   isDown = false;
-//   slider.classList.remove('active');
-// });
-// slider.addEventListener('mousemove', e => {
-//   if (!isDown) return;
-//   e.preventDefault();
-//   const x = e.pageX - slider.offsetLeft;
-//   const SCROLL_SPEED = 3;
-//   const walk = (x - startX) * SCROLL_SPEED;
-//   slider.scrollLeft = scrollLeft - walk;
-// });
-
-
-// Hiermee worden er nieuwe routes gemaak
+// Hiermee worden er nieuwe routes gemaak.
 app.get('/about', onabout)
 app.get('/login', onlogin)
 app.get('*', notfound)
@@ -149,7 +125,7 @@ function notfound(req, res) {
 }
 
 
-// Geeft aan dat de app draait op de poort 8000
+// Geeft aan dat de app draait op de poort 8000.
 app.listen(PORT, function () {
   console.log('listening to port: ', PORT)
 })
