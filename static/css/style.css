@@ -10,8 +10,16 @@ html {
 /* Algemeen */
 /* ********************************************************************************************* */
 /* ********************************************************************************************* */
+:root {
+    --PawFinderGroen: #9ACD32;
+    --PawFinderPink: #ed028f;
+    --PawFinderAchtergron: #f8ffeb;
+    --BasisZwart: #000000;
+    --BasisWit: #ffffff;
+}
+
 body {
-    background-color: white;
+    background-color: var(--BasisWit);
 }
 
 main {
@@ -19,6 +27,12 @@ main {
     margin: auto;
 }
 
+button {
+    background-color: var(--PawFinderGroen);
+    border: none;
+    color: var(--BasisZwart);
+    cursor: pointer;
+}
 
 /* ********************************************************************************************* */
 /* ********************************************************************************************* */
@@ -31,18 +45,12 @@ header {
 }
 
 header h1 {
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* justify-content: center; */
     text-align: center;
     margin: 1em 0em 0em;
 }
 
 header nav {
-    /* display: flex; */
-    /* flex-wrap: wrap; */
     margin: 1em;
-    /* justify-content: center; */
 }
 
 header nav ul {
@@ -51,7 +59,6 @@ header nav ul {
     margin: 1em;
     justify-content: space-between;
     align-items: center;
-    /* flex-grow: 1; */
 }
 
 header nav li:first-of-type a {
@@ -60,7 +67,6 @@ header nav li:first-of-type a {
 
 header nav li {
     list-style-type: none;
-    /* flex-grow: 1; */
 }
 
 header nav li a {
@@ -73,18 +79,19 @@ header nav img {
 }
 
 header hr {
-    border-top: 0.2em solid #9ACD32;
+    border-top: 0.2em solid var(--PawFinderGroen);
     border-radius: 1em;
     width: 100%;
     margin: auto;
 }
-
 
 /* ********************************************************************************************* */
 /* ********************************************************************************************* */
 /* Matches */
 /* ********************************************************************************************* */
 /* ********************************************************************************************* */
+
+/* Section 1 *********************************************************************************** */
 #matches section:first-of-type {
     margin: 2em;
 }
@@ -96,8 +103,9 @@ header hr {
 }
 
 .errorh3{
-    color: #ed028f;
+    color: var(--PawFinderPink);
     text-decoration: underline;
+    font-size: 1.6em;
 }
 
 #matches section:first-of-type form {
@@ -114,12 +122,8 @@ header hr {
 }
 
 #matches section:first-of-type button {
-    background-color: #9ACD32;
-    border: none;
-    color: black;
     padding: 1em 1.5em;
     font-size: 1em;
-    cursor: pointer;
     margin: 1em 100%;
 }
 
@@ -135,6 +139,7 @@ header hr {
     padding: 0em;
 }
 
+/* Section 2 *********************************************************************************** */
 #matches section:nth-of-type(2) {
     display: flex;
     flex-wrap: wrap;
@@ -142,7 +147,7 @@ header hr {
     justify-content: flex-start;
 }
 
-
+/* Section 3 *********************************************************************************** */
 #matches section:nth-of-type(3) ul {
     display: flex;
     justify-content: center;
@@ -153,24 +158,16 @@ header hr {
 #matches section:nth-of-type(3) li {
     display: flex;
     overflow-x: scroll;
-    /* display: grid; */
-    /* grid-template-columns: repeat(11, 90%); */
-    /* grid-column-gap: 10em; */
-    /* scroll-snap-type: both mandatory; */
-}
-
-.active {
-    scroll-snap-type: unset;
 }
 
 #matches section:nth-of-type(3) a {
     scroll-snap-align: center;
     text-decoration: none;
-    background-color: #f8ffeb;
+    background-color: var(--PawFinderAchtergron);
     width: 16em;
     height: 20.5em;
     border-radius: 1em;
-    border: solid 0.1em black;
+    border: solid 0.1em var(--BasisZwart);
     position: relative;
     margin: 1em 3em;
 }
@@ -181,7 +178,7 @@ header hr {
 }
 
 #matches section:nth-of-type(3) a div {
-    color: black;
+    color: var(--BasisZwart);
     position: absolute;
     bottom: 1em;
     padding-left: 1em;
@@ -193,11 +190,7 @@ header hr {
 }
 
 #matches section:nth-of-type(3) a div button {
-    background-color: #9ACD32;
-    border: none;
-    color: black;
     padding: 0.5em 1.5em;
     margin: 1em 4.5em 0em;
     font-size: 0.9em;
-    cursor: pointer;
 }
