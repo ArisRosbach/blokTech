@@ -2,13 +2,13 @@
 
     {{!-- Section 1 --}}
     <section>
-
+        <h3>Kies wat voor een dier je zoekt:</h3>
         {{!-- Wanneer er op verzonden wordt gedrukt verstuurt browser naar de server,
         browser wordt naar /formulier geleid --}}
         <form action="/formulier" method="POST">
             <fieldset>
                 {{!-- Radiobuttons met diersoorten --}}
-                <input type="radio" id="hond" name="diersoort" value="hond" />
+                <input type="radio" id="hond" name="diersoort" value="hond" required/>
                 <label for="hond">Ik zoek een hond</label>
                 <input type="radio" id="kat" name="diersoort" value="kat" />
                 <label for="kat">Ik zoek een kat</label>
@@ -19,6 +19,7 @@
             </fieldset>
             <button type="submit">Opslaan</button>
         </form>
+
     </section>
 
     {{!-- Section 2 --}}
@@ -28,22 +29,29 @@
 
     {{!-- Section 3 --}}
     <section>
+        <ul>
+            {{!-- <li><button>links</button></li> --}}
+            <li>
+                {{!-- Loop met hbs om alle dieren te weergeven --}}
+                {{#each dieren}}
+                <a href="#">
+                    <img src={{this.imgSrc}} alt="foto van een dier" />
+                    <div>
+                        <h3>{{this.naam}}</h3>
+                        <h4>{{this.ras}}</h4>
+                        <p>{{this.locatie}}</p>
+                        <form action="/delete" method="post">
+                            <input name="asieldier" type="hidden" value="{{this.naam}}" />
+                            <button type="submit">Delete</button>
+                        </form>
+                    </div>
+                </a>
+                {{/each}}
+            </li>
+            {{!-- <li><Button>rechts</Button></li> --}}
+        </ul>
 
-        {{!-- Loop met hbs om alle dieren te weergeven --}}
-        {{#each dieren}}
-        <a href="#">
-            <img src={{this.imgSrc}} alt="foto van een dier" />
-            <div>
-                <h3>{{this.naam}}</h3>
-                <h4>{{this.ras}}</h4>
-                <p>{{this.locatie}}</p>
-                <form action="/delete" method="post">
-                    <input name="asieldier" type="hidden" value="{{this.naam}}" />
-                    <button type="submit">Delete</button>
-                </form>
-            </div>
-        </a>
-        {{/each}}
     </section>
 
+    <script src="../static/script/script.js"></script>
 </main>

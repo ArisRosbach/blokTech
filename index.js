@@ -10,18 +10,27 @@ const multer = require('multer')
 const PORT = process.env.PORT || 8000;
 
 
-const {utilsDB}  = require('./utils/db')
+const {
+  utilsDB
+} = require('./utils/db')
 
 // laad variableen uit mijn .env
 require('dotenv').config();
 
 // om de database te koppelen
-const { MongoClient } = require('mongodb');
+const {
+  MongoClient
+} = require('mongodb');
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@blok-tech-aris.lqajs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 // alle dieren die in array staan in console weergeven
-utilsDB(client).then(data => { console.log(data)})
+utilsDB(client).then(data => {
+  console.log(data)
+})
 
 // Gebruiken van hbs voor extensions
 app.engine("hbs", exphbs.engine({
@@ -43,10 +52,10 @@ app.use(bodyParser.urlencoded({
 
 // async geeft aan dat dit een funcite is waarin dingen langer duren, zoals data uit een database halen
 // res.render() wordt gebruikt om een view te renderen en verstuurd de gerenderde HTML naar de client. 
-app.get("/", async(req, res) => {
+app.get("/", async (req, res) => {
 
   // data uit de database wat in een array is gestopt wordt nu in de constante dieren gezet.
-  const dieren = await utilsDB(client); 
+  const dieren = await utilsDB(client);
 
   // ophalen dieren database en deze weergeven op de localhost:8000
   res.render("matches", {
@@ -54,12 +63,12 @@ app.get("/", async(req, res) => {
   });
 });
 
-app.post("/formulier", async(req, res) => {
+app.post("/formulier", async (req, res) => {
 
-  const dieren = await utilsDB(client); 
+  const dieren = await utilsDB(client);
 
   console.log(req.body);
-  
+
   // filter animals
   const filteredDieren = dieren.filter((dieren) => {
     // stop het item alleen in de array wanneer onderstaande regel 'true' is
@@ -79,7 +88,9 @@ app.post("/delete", async (req, res) => {
   console.log(req.body.asieldier)
 
   //het dier op naam verwijderen die overeenkomt met de naam die geklikt is
-  client.db('userdb').collection('users').deleteOne({ naam: req.body.asieldier }).then(hond => {
+  client.db('userdb').collection('users').deleteOne({
+    naam: req.body.asieldier
+  }).then(hond => {
     console.log(hond);
   })
 
@@ -87,6 +98,37 @@ app.post("/delete", async (req, res) => {
   res.redirect('/')
 
 });
+
+
+// // ----------------------------------------------------------- front-end
+// const slider = document.querySelector('#matches section:nth-of-type(3) ul');
+// let isDown = false;
+// let startX;
+// let scrollLeft;
+
+// slider.addEventListener('mousedown', e => {
+//   isDown = true;
+//   slider.classList.add('active');
+//   startX = e.pageX - slider.offsetLeft;
+//   scrollLeft = slider.scrollLeft;
+// });
+// slider.addEventListener('mouseleave', _ => {
+//   isDown = false;
+//   slider.classList.remove('active');
+// });
+// slider.addEventListener('mouseup', _ => {
+//   isDown = false;
+//   slider.classList.remove('active');
+// });
+// slider.addEventListener('mousemove', e => {
+//   if (!isDown) return;
+//   e.preventDefault();
+//   const x = e.pageX - slider.offsetLeft;
+//   const SCROLL_SPEED = 3;
+//   const walk = (x - startX) * SCROLL_SPEED;
+//   slider.scrollLeft = scrollLeft - walk;
+// });
+
 
 // Hiermee worden er nieuwe routes gemaak
 app.get('/about', onabout)

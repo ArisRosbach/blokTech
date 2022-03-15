@@ -89,6 +89,17 @@ header hr {
     margin: 2em;
 }
 
+#matches section:first-of-type h3 {
+    text-align: center;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+.errorh3{
+    color: #ed028f;
+    text-decoration: underline;
+}
+
 #matches section:first-of-type form {
     display: flex;
     flex-wrap: wrap;
@@ -131,25 +142,41 @@ header hr {
     justify-content: flex-start;
 }
 
-#matches section:nth-of-type(3) {
+
+#matches section:nth-of-type(3) ul {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+#matches section:nth-of-type(3) li {
+    display: flex;
+    overflow-x: scroll;
+    /* display: grid; */
+    /* grid-template-columns: repeat(11, 90%); */
+    /* grid-column-gap: 10em; */
+    /* scroll-snap-type: both mandatory; */
+}
+
+.active {
+    scroll-snap-type: unset;
 }
 
 #matches section:nth-of-type(3) a {
+    scroll-snap-align: center;
     text-decoration: none;
     background-color: #f8ffeb;
-    width: 15em;
-    height: 17.5em;
+    width: 16em;
+    height: 20.5em;
     border-radius: 1em;
     border: solid 0.1em black;
     position: relative;
-    margin: 1em 0em;
+    margin: 1em 3em;
 }
 
 #matches section:nth-of-type(3) a img {
-    max-width: 14.9em;
+    max-width: 15.9em;
     border-radius: 1em;
 }
 
@@ -162,4 +189,15 @@ header hr {
 
 #matches section:nth-of-type(3) a div h3 {
     padding: 0.5em 0em;
+    font-size: 1.5em;
+}
+
+#matches section:nth-of-type(3) a div button {
+    background-color: #9ACD32;
+    border: none;
+    color: black;
+    padding: 0.5em 1.5em;
+    margin: 1em 4.5em 0em;
+    font-size: 0.9em;
+    cursor: pointer;
 }
