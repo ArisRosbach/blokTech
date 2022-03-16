@@ -62,7 +62,10 @@ Hier lees je over hoe ik tot mijn concept en feature ben gekomen. Daarnaast heb 
 
 
 ## :heavy_exclamation_mark:Lincense
-ArisRosbach/blokTech is licensed under the [GNU General Public License v3.0](https://github.com/ArisRosbach/blokTech/blob/main/LICENSE)
+Deze repository is licensed onder de [GNU General Public License v3.0](https://github.com/ArisRosbach/blokTech/blob/main/LICENSE)
+<p align="center">
+  <img width="80%" src="https://github.com/ArisRosbach/blokTech/blob/main/images/bannerLicense.png" />
+</p>
 
 ## :email:Contact
 Naam -  Aris Rosbach <br>
