@@ -1,7 +1,9 @@
-# Matching-application
-Welkom bij mijn blokTech repository! :smiley:
+# PawFinder
+<p align="center">
+  <img width="70%" src="https://github.com/ArisRosbach/blokTech/blob/main/images/bannerPawFinder.png" />
+</p>
 
-## Over dit project
+## :paw_prints:Over dit project
 Dit project bevat een feature voor een matching applicatie. <br>
 Let op: dit is dus geen gehele matching applicatie maar een onderdeel daarvan.
 
@@ -12,7 +14,7 @@ Wanneer je bent ingelogd krijg je alle potentiële matches te zien. Aangezien je
 Daarnaast kun je in je eigen sessie een match verwijderen als je deze niet interessant vind. Bij elk dier vind je en verwijder knop. Wanneer je daar op drukt zal het dier verdwijnen uit jouw potentiële matches.
 
 
-## Installatie 
+## :zap:Installatie 
 ### Aan de slag
 Wil je aan de slag met mijn project? Voer dan de volgende stappen uit: <br>
 1.	Open een terminal en navigeer naar een map waar jij mijn repository in wilt opslaan.
@@ -47,22 +49,22 @@ node -v #
 npm -v # 
 ```
 
-## Database
+## :computer:Database
 Binnen dit project is er gebruik van een MongoDB database. <br>
 Wil je hier meer over begrijpen en lezen wat mijn database structuur is? Dan verwijs ik je graag door naar de pagina [Database Structure](https://github.com/ArisRosbach/blokTech/wiki/Database-Structure) binnen mijn wiki. <br>
 Hier vind je een korte toelichting over een database en heb ik de structuur in een afbeelding weergegeven. 
 
 
-## Documentatie
+## :memo:Documentatie
 Dit project is tot stand gekomen dankzij veel ideeën maar vooral onderzoek. <br>
 Mijn gehele documentatie hiervan kun je vinden in de [wiki](https://github.com/ArisRosbach/blokTech/wiki) van deze repository. <br>
 Hier lees je over hoe ik tot mijn concept en feature ben gekomen. Daarnaast heb ik ook veel onderzoek gedaan naar de onderwerpen die kwamen kijken bij het maken van dit project.
 
 
-## Lincense
+## :heavy_exclamation_mark:Lincense
 ArisRosbach/blokTech is licensed under the [GNU General Public License v3.0](https://github.com/ArisRosbach/blokTech/blob/main/LICENSE)
 
-## Contact
+## :email:Contact
 Naam -  Aris Rosbach <br>
 Email - aris.rosbach@hva.nl <br>
 Project - https://github.com/ArisRosbach/blokTech
