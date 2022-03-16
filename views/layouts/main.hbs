@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,15 @@
     <link rel="stylesheet" href="static/css/style.css">
     <title>PawFinder</title>
 </head>
+
 <body>
     {{!-- Ophalen uit partials -> header.hbs --}}
     {{> header}}
     {{!-- Ophalen uit matches.hbs --}}
     {{{body}}}
+
+    {{!-- Script.js wordt gekoppeld aan matches.hbs --}}
+    <script src="../static/script/script.js"></script>
 </body>
+
 </html>
