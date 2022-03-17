@@ -153,6 +153,7 @@ header hr {
     justify-content: center;
     align-items: center;
     list-style: none;
+    margin: 1em 0em 2em;
 }
 
 #matches section:nth-of-type(3) li {
