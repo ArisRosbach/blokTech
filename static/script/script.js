@@ -1,13 +1,13 @@
-const form = document.querySelector('#matches section:first-of-type form');
+const form = document.querySelector("#matches section:first-of-type form");
 
 // Constanten voor elke radiobutton.
-const buttonHond = document.getElementById('hond');
-const buttonKat = document.getElementById('kat');
-const buttonKnaagdier = document.getElementById('knaagdier');
-const buttonOverig = document.getElementById('overig');
+const buttonHond = document.getElementById("hond");
+const buttonKat = document.getElementById("kat");
+const buttonKnaagdier = document.getElementById("knaagdier");
+const buttonOverig = document.getElementById("overig");
 
 // Constante voor h3 waarschuwing.
-const h3Waarschuwing = document.querySelector('#matches section:first-of-type h3');
+const h3Waarschuwing = document.querySelector("#matches section:first-of-type h3");
 
 
 // Wanneer JavaScript ondersteund is required in html weghalen zodat custom melding kan worden gemaakt.
@@ -35,7 +35,7 @@ form.addEventListener("submit", (event) => {
         form.submit();
     } else {
         console.log("Je hebt niets aangeklikt");
-        h3Waarschuwing.classList.add('errorh3');
+        h3Waarschuwing.classList.add("errorh3");
         // h3 veranderen naar volgende string
         h3Waarschuwing.innerHTML = "Je hebt nog geen diersoort gekozen!";
     }
