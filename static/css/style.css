@@ -20,6 +20,7 @@ html {
 
 body {
     background-color: var(--BasisWit);
+    font-family: 'Inter', Arial, sans-serif;
 }
 
 main {
