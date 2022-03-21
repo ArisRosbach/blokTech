@@ -2,7 +2,6 @@
 const camelCase = require("camelcase");
 console.log(camelCase("ik-ben-aris_rosbach"));
 
-
 const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
@@ -35,7 +34,7 @@ utilsDB(client).then(data => {
 // Gebruiken van hbs voor extensions.
 app.engine("hbs", exphbs.engine({
   defaultLayout: "main",
-  extname: ".hbs",
+  extname: ".hbs"
 }));
 
 // Middleware to setup hbs view engine.
@@ -53,7 +52,6 @@ app.use(bodyParser.urlencoded({
 // Wanneer applicatie wordt geladen wordt deze functie in werking gezet.
 // async geeft aan dat dit een funcite is waarin dingen langer duren, zoals data uit een database halen.
 app.get("/", async (req, res) => {
-
   // data uit de database wat in een array is gestopt wordt nu in de constante dieren gezet.
   const dieren = await utilsDB(client);
 
@@ -65,7 +63,6 @@ app.get("/", async (req, res) => {
 
 // Wanneer gebruiker een radiobutton heeft aangeklikt wordt deze functie in werking gezet.
 app.post("/formulier", async (req, res) => {
-
   // Ophalen van data duur wat langer dus laten wachten tot dit gelukt is.
   const dieren = await utilsDB(client);
 
@@ -74,7 +71,7 @@ app.post("/formulier", async (req, res) => {
   // Filteren asieldieren
   const filteredDieren = dieren.filter((dieren) => {
     // Stop het item alleen in de array wanneer onderstaande regel 'true' is.
-    return dieren.diersoort == req.body.diersoort;
+    return dieren.diersoort === req.body.diersoort;
   });
 
   // Renderen van localhost:8000/formulier met de gefilterde dieren.
@@ -86,7 +83,6 @@ app.post("/formulier", async (req, res) => {
 // Wanneer gebruiker op delete klikt wordt deze functie in werking gezet.
 // HTML5 ondersteund geen DELETE dus vandaar post.
 app.post("/delete", async (req, res) => {
-
   // Wachten tot database is connected.
   await client.connect();
 
@@ -102,7 +98,6 @@ app.post("/delete", async (req, res) => {
 
   // Response is dat de home pagana opnieuw geladen wordt.
   res.redirect("/");
-
 });
 
 // Hiermee worden er nieuwe routes gemaak.
@@ -110,19 +105,17 @@ app.get("/about", onabout);
 app.get("/login", onlogin);
 app.get("*", notfound);
 
-
-function onabout(req, res) {
+function onabout (req, res) {
   res.send("<h1>Hier vind je alles about me!</h1>");
 }
 
-function onlogin(req, res) {
+function onlogin (req, res) {
   res.send("<h1>Op deze pagina kun je inloggen</h1>");
 }
 
-function notfound(req, res) {
+function notfound (req, res) {
   res.send("<h1>404 - Not Found!</h1>");
 }
-
 
 // Geeft aan dat de app draait op de poort 8000.
 app.listen(PORT, function () {
