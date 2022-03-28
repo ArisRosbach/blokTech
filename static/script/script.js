@@ -1,4 +1,5 @@
 const form = document.querySelector("#matches section:first-of-type form");
+const buttonfeiten = document.querySelector(".facts button");
 
 // Constanten voor elke radiobutton.
 const buttonHond = document.getElementById("hond");
@@ -38,3 +39,49 @@ form.addEventListener("submit", (event) => {
     h3Waarschuwing.innerHTML = "Je hebt nog geen diersoort gekozen!";
   }
 });
+
+
+// API Random zoo animal.
+const URL = 'https://zoo-animal-api.herokuapp.com/animals/rand/2';
+
+// Haal de lijst 'ul' op uit de html.
+const list = document.querySelector('.facts ul');
+// Haal de button op uit de html.
+const button = document.querySelector('.facts button');
+
+
+// Functie om de lijst te vullen met dierentuin dieren.
+function getZooDieren() {
+
+  // Vraag de data op van de api url.
+  getData(URL).then(data => {
+    const alleZooDieren = data;
+
+    // Voeg de dieren toe aan de ul.
+    alleZooDieren.forEach(dierentuinDier => {
+
+      // Voor ieder dier een <li> element.
+      let amiiboListElement =
+        `<li>
+            <img src="${dierentuinDier.image_link}" alt="${dierentuinDier.id}">
+            <h3>${dierentuinDier.name}</h3>
+            <p>Ze worden gemiddeld ${dierentuinDier.lifespan} oud.</p>
+				</li>`;
+
+      // 'insert' de 'li' in de 'ul'.
+      list.insertAdjacentHTML('beforeend', amiiboListElement);
+    })
+  });
+}
+
+// Generieke functie om data aan een API te vragen.
+async function getData(URL) {
+  return (
+  fetch(URL)
+  .then ( response => response.json() )
+  .then ( jsonData => jsonData )
+  );
+}
+
+// Wanneer er op button wordt geklikt, functie getZooDieren uitvoeren.
+button.addEventListener("click", getZooDieren);

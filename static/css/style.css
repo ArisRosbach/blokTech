@@ -57,7 +57,7 @@ header nav {
 header nav ul {
     display: flex;
     flex-wrap: wrap;
-    margin: 1em;
+    margin: 0em 1em 1em;
     justify-content: space-between;
     align-items: center;
 }
@@ -94,7 +94,7 @@ header hr {
 
 /* Section 1 *********************************************************************************** */
 #matches section:first-of-type {
-    margin: 2em;
+    margin: 1em 2em 1em;
 }
 
 #matches section:first-of-type h3 {
@@ -195,4 +195,72 @@ header hr {
     padding: 0.5em 1.5em;
     margin: 1em 4.5em 0em;
     font-size: 0.9em;
+}
+
+/* randomfacts.hbs  **************************************************************************** */
+.facts {
+    max-width: 60em;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.facts hr {
+    border-top: 0.2em solid var(--PawFinderGroen);
+    border-radius: 1em;
+    width: 100%;
+    margin: auto;
+}
+
+.facts p {
+    text-align: center;
+    width: 100%;
+}
+
+.facts .firstp {
+    font-size: 1.1em;
+    margin: 3em 1em 1em;
+}
+
+.facts  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 1em 0em 2em;
+    overflow-x: auto;
+}
+
+.facts li {
+    background-color: var(--PawFinderAchtergron);
+    width: 16em;
+    height: 18.5em;
+    border-radius: 1em;
+    border: solid 0.1em var(--BasisZwart);
+    position: relative;
+    margin: 1em 1em;
+}
+
+.facts img {
+    width: 15.8em;
+    height: 11em;
+    object-fit: cover;
+    object-position: 100% 0;
+    border-radius: 1em;
+}
+
+.facts h3 {
+    padding: 0.5em 0em 0.5em 0.5em;
+    font-size: 1.5em;
+}
+
+.facts ul li p {
+    margin: 0;
+}
+
+.facts button {
+    padding: 1em 1.5em;
+    font-size: 1em;
+    margin: 1em;
+    width: 100%;
 }
